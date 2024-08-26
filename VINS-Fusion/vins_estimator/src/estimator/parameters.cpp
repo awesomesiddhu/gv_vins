@@ -45,7 +45,7 @@ int MIN_DIST;
 double F_THRESHOLD;
 int SHOW_TRACK;
 int FLOW_BACK;
-
+double preintegrated_imu_time;
 
 template <typename T>
 T readParam(ros::NodeHandle &n, std::string name)

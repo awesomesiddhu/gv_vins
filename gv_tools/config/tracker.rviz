@@ -86,7 +86,7 @@ Visualization Manager:
         Shaft Length: 1
         Shaft Radius: 0.05000000074505806
         Value: Axes
-      Topic: /pose_gt
+      Topic: /vins_estimator/pose_gt
       Unreliable: false
       Value: true
     - Class: rviz/Image

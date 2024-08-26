@@ -12,6 +12,6 @@ extern ros::Publisher pub_posegt;
 void registerPub_gt(ros::NodeHandle &n);
 
 // Function to publish the pose ground truth
-void pubPosegt(const Eigen::Vector3d &delta_p, const Eigen::Quaterniond &delta_q, const Eigen::Vector3d &delta_v, Eigen::Matrix<double, 15, 15> &covariance);
+void pubPosegt(const Eigen::Vector3d &delta_p, const Eigen::Quaterniond &delta_q, const Eigen::Vector3d &delta_v, Eigen::Matrix<double, 15, 15> &covariance, double t);
 
 #endif // POSE_GT_H

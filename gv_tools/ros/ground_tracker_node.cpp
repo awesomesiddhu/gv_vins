@@ -229,7 +229,7 @@ int main(int argc, char **argv)
     spinner.start();
 
     sub_img = nh.subscribe("/front/realsense/color/image_raw", 1, img_callback);
-    sub_pose = nh.subscribe("/odom", 1, imu_pose_callback);
+    sub_pose = nh.subscribe("/vins_estimator/pose_gt", 1, imu_pose_callback);
     image_transport::ImageTransport it(nh);
     // Create a publisher for the PointCloud message
     features_pub = nh.advertise<sensor_msgs::PointCloud>("/ground_tracker_node/features", 2000);

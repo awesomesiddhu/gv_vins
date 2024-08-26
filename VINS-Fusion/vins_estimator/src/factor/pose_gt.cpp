@@ -7,14 +7,14 @@ void registerPub_gt(ros::NodeHandle &n)
     pub_posegt = n.advertise<nav_msgs::Odometry>("pose_gt", 50);
 }
 
-void pubPosegt(const Eigen::Vector3d &delta_p, const Eigen::Quaterniond &delta_q, const Eigen::Vector3d &delta_v, Eigen::Matrix<double, 15, 15> &covariance)
+void pubPosegt(const Eigen::Vector3d &delta_p, const Eigen::Quaterniond &delta_q, const Eigen::Vector3d &delta_v, Eigen::Matrix<double, 15, 15> &covariance, double t)
 {
     nav_msgs::Odometry odom_msg;
-    ros::Time current_time = ros::Time::now();
+    //ros::Time current_time = ros::Time::now();
     // Fill header
-    odom_msg.header.stamp = current_time;
-    odom_msg.header.frame_id = "odom";
-    odom_msg.child_frame_id = "base_link";
+    odom_msg.header.stamp = ros::Time(t);
+    // odom_msg.header.frame_id = "map";
+    // odom_msg.child_frame_id = "base_link";
 
     // Position
     odom_msg.pose.pose.position.x = delta_p.x();

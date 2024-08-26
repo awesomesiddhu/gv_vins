@@ -374,6 +374,7 @@ void Estimator::initFirstPose(Eigen::Vector3d p, Eigen::Matrix3d r)
 
 void Estimator::processIMU(double t, double dt, const Vector3d &linear_acceleration, const Vector3d &angular_velocity)
 {
+    preintegrated_imu_time = t;
     if (!first_imu)
     {
         first_imu = true;

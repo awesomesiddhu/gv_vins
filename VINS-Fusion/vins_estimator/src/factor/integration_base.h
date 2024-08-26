@@ -17,6 +17,7 @@
 #include <geometry_msgs/Vector3.h>
 #include <ceres/ceres.h>
 #include "../factor/pose_gt.h"
+
 using namespace Eigen;
 
 class IntegrationBase
@@ -167,8 +168,8 @@ class IntegrationBase
         sum_dt += dt;
         acc_0 = acc_1;
         gyr_0 = gyr_1;  
-
-        pubPosegt(delta_p, delta_q, delta_v, covariance);
+        std::cout << "Received message with timestamp: " << preintegrated_imu_time << std::endl;
+        pubPosegt(delta_p, delta_q, delta_v, covariance, preintegrated_imu_time + dt);
     }
 
     Eigen::Matrix<double, 15, 1> evaluate(const Eigen::Vector3d &Pi, const Eigen::Quaterniond &Qi, const Eigen::Vector3d &Vi, const Eigen::Vector3d &Bai, const Eigen::Vector3d &Bgi,
