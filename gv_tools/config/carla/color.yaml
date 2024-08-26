@@ -1,0 +1,78 @@
+%YAML:1.0
+---
+model_type: PINHOLE
+camera_name: camera
+image_width: 1280
+image_height: 720
+distortion_parameters:
+   k1: 0
+   k2: 0
+   p1: 0
+   p2: 0
+projection_parameters:
+   fx: 919.033203125
+   fy: 919.698486328125
+   cx: 651.2035522460938
+   cy: 357.77734375
+
+# d = [k1 k2 p1 p2 k3]
+# k = [fx s cx 0 fy cy 0 0 1]
+# p = k * [r|t] 
+
+# ros2 bag play lidar_cam_odom_1.bag
+# ros2 topic echo /camera/camera/color/camerainfo
+# header:
+#   stamp:
+#     sec: 1715246713
+#     nanosec: 797655518
+#   frame_id: camera_color_optical_frame
+# height: 720
+# width: 1280
+# distortion_model: plumb_bob
+# d:
+# - 0.0
+# - 0.0
+# - 0.0
+# - 0.0
+# - 0.0
+# k:
+# - 919.033203125
+# - 0.0
+# - 651.2035522460938
+# - 0.0
+# - 919.698486328125
+# - 357.77734375
+# - 0.0
+# - 0.0
+# - 1.0
+# r:
+# - 1.0
+# - 0.0
+# - 0.0
+# - 0.0
+# - 1.0
+# - 0.0
+# - 0.0
+# - 0.0
+# - 1.0
+# p:
+# - 919.033203125
+# - 0.0
+# - 651.2035522460938
+# - 0.0
+# - 0.0
+# - 919.698486328125
+# - 357.77734375
+# - 0.0
+# - 0.0
+# - 0.0
+# - 1.0
+# - 0.0
+# binning_x: 0
+# binning_y: 0
+# roi:
+#   x_offset: 0
+#   y_offset: 0
+#   height: 0
+#   width: 0
+#   do_rectify: false
